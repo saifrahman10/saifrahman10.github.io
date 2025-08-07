@@ -36,6 +36,32 @@ $(document).ready(function () {
             settings: {
                 slidesToShow: 1
             }
-        }, ]
+        }]
     });
+
+    // -------------------------------
+    // 💧 Apple-like Section Transitions
+    // -------------------------------
+
+    // Add transition classes
+    $('section').addClass('section-transition');
+
+    function showSection(id) {
+        $('section').removeClass('section-visible');
+        $(id).addClass('section-visible');
+    }
+
+    // On nav click
+    $('nav a[href^="#"]').on('click', function (e) {
+        e.preventDefault();
+        const targetId = $(this).attr('href');
+
+        // scroll animation handled by SmoothScroll
+        history.pushState(null, null, targetId);
+        showSection(targetId);
+    });
+
+    // Show current section on page load
+    const currentHash = window.location.hash || '#home';
+    showSection(currentHash);
 });

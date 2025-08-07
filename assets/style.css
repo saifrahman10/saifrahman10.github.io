@@ -1,3 +1,4 @@
+/* Center content */
 .center {
   display: block;
   margin-left: auto;
@@ -6,8 +7,17 @@
   width: 50%;
 }
 
+.center_img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+/* Row/column layout */
 .row {
   display: flex;
+  flex-wrap: wrap;
 }
 
 .column {
@@ -15,17 +25,62 @@
   padding: 5px;
 }
 
+/* Offset certain sections */
 .set {
-    margin-left:20%;
+  margin-left: 20%;
 }
 
-.nav {
-    font-color:
+/* Navigation */
+#nav-items {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  text-align: center;
 }
 
-.center_img {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 50%;
+nav a {
+  color: white;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 1rem;
+  text-decoration: none;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+/* Section transitions (Apple-like liquid effect) */
+.section-transition {
+  position: relative;
+  opacity: 0;
+  transform: scale(0.95);
+  filter: blur(10px);
+  transition: opacity 0.6s ease, transform 0.6s ease, filter 0.6s ease;
+  pointer-events: none;
+}
+
+.section-visible {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(0);
+  pointer-events: auto;
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Optional: Make sure all sections take full width */
+section {
+  width: 100%;
+}
+
+/* Responsive tweaks (optional if using ShorthandCSS) */
+@media (max-width: 768px) {
+  .column {
+    flex: 100%;
+    margin-bottom: 20px;
+  }
+
+  .center, .center_img {
+    width: 80%;
+  }
 }

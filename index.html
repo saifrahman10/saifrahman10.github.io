@@ -1,313 +1,273 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
-    <!-- Global site tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-YPQ3VZYZHP"></script>
     <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-YPQ3VZYZHP');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-YPQ3VZYZHP');
     </script>
     
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>S. Rahman</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/shorthandcss@1.1.1/dist/shorthand.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Muli:200,300,400,500,600,700,800,900&display=swap" />
-    <link rel="stylesheet" type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
-    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick-theme.css" />
-    <link rel="stylesheet" href="assets/style.css" />
+    <title>S. Rahman - Data Science Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .hex-transparent-header {
+            /* Use a solid hex color for the background, then apply opacity */
+            background-color: #2b2b2a; 
+            /* The opacity value below controls transparency (0.9 is 90% opaque) */
+            opacity: 0.9;
+            /* Optional: Keep the blur effect for an "Apple-like" feel */
+            backdrop-filter: blur(20px);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .apple-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .apple-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
+        }
+        .slick-prev:before, .slick-next:before {
+            color: #333;
+            font-size: 2rem;
+        }
+        .slick-dots li button:before {
+            color: #333 !important;
+        }
+        .animate-fade-in {
+            opacity: 0;
+            animation: fadeIn 1s forwards;
+        }
+        @keyframes fadeIn {
+            to { opacity: 1; }
+        }
+        .animate-fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 1s forwards;
+        }
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .animation-delay-100 {
+            animation-delay: 0.1s;
+        }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css"/>
 </head>
 
-<body class="bg-black muli">
-    <nav class="w-100pc flex flex-column md-flex-row md-px-10 py-5 bg-black">
-        <div id="nav-items" class="hidden flex sm-w-100pc flex-column md-flex md-flex-row md-justify-end items-center">
-            <a href="#home" class="fs-s1 mx-3 py-3 no-underline hover-underline" style="color:white;">Home</a>
-            <a href="#projects" class="fs-s1 mx-3 py-3 no-underline hover-underline" style="color:white;">Projects</a>
-            <a href="#education" class="fs-s1 mx-3 py-3 no-underline hover-underline" style="color:white;">Education</a>
-            <a href="#skills" class="fs-s1 mx-3 py-3 no-underline hover-underline" style="color:white;">Skills</a>
-            <a href="#contact" class="fs-s1 mx-3 py-3 no-underline hover-underline" style="color:white;">Contact</a>
-            <a href="https://saifmorahman.medium.com/" class="fs-s1 mx-3 py-3 no-underline hover-underline" style="color:white;">Blogs</a>
-        </div>
-    </nav>
+<body class="bg-white text-gray-900">
 
-    <!-- hero section -->
-    <section id="home">
-        <div class="mx-5 md-mx-l5">
-            <div class="row">
-                <div class="column" style="margin-bottom: 20%">
-                    <h1 class="white fs-l3 lh-2 md-fs-xl1 md-lh-1 fw-900" style="margin-top: 15%">Hi! <br>I'm Saif</h1>
-                    <h2 class="white">Welcome to my Data Science Portfolio Website</h2>
-                </div>
-                <div class="column">
-                     <img src="assets/images/wave.gif" width="200%"/>
-                </div>
+    <header id="site-header" class="fixed top-0 w-full z-20 hex-transparent-header">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-semibold text-gray-100">
+            <div class="flex items-center space-x-8">
+                <a href="#home" class="text-xl font-bold text-gray-100 tracking-widest hover:text-gray-900 transition-colors duration-300">S. Rahman</a>
             </div>
-        </div>
-    </section>
+            <ul class="hidden md:flex flex-grow justify-center space-x-8 list-none">
+                <li><a href="#projects" class="hover:text-gray-900 transition-colors duration-300">Projects</a></li>
+                <li><a href="#education" class="hover:text-gray-900 transition-colors duration-300">Education</a></li>
+                <li><a href="#skills" class="hover:text-gray-900 transition-colors duration-300">Skills</a></li>
+                <li><a href="#contact" class="hover:text-gray-900 transition-colors duration-300">Contact</a></li>
+                <li><a href="https://saifmorahman.medium.com/" class="hover:text-gray-900 transition-colors duration-300" target="_blank" rel="noopener noreferrer">Blog</a></li>
+            </ul>
+            <div class="flex items-center space-x-4">
+                </div>
+        </nav>
+    </header>
 
-    <!-- slider -->
-    <section class="relative bg-indigo-lightest-10" id="projects">
-        <div id="slider-1">
-            <div class="p-10 md-p-l10 flex justify-center items-center flex-column text-center">
-                <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                    <span class="border-b bc-indigo bw-4">Projects</span>
-                </h2>
-                <h2 class="white fs-l3 fw-900"><br> Machine Learning</h2>
-                <div class="flex flex-column md-flex-row md-w-80pc mx-auto">
-                    <div class="w-100pc md-w-50pc">
-                        <div class="br-8 p-5 m-5 bg-indigo-lightest-10  pointer hover-scale-up-1 ease-300">
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">SQL</div>
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Python</div>
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Supervised ML</div>
-                            <div class="indigo-lightest fw-600 fs-m1">Loan Default Prediction</div>
-                            <img src="assets/images/money.svg" width="200" class="center">
-                            <a href="loandefault.html" class="mt-10 button bg-black fs-s3 white no-underline">See Project</a>
-                        </div>
-                    </div>
-                    <div class="w-100pc md-w-50pc">
-                        <div class="br-8 p-5 m-5 bg-indigo-lightest-10  pointer hover-scale-up-1 ease-300">
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">NLP</div>
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Python</div>
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Supervised ML</div>
-                            <div class="indigo-lightest fw-600 fs-m1">Sentiment Analysis</div>
-                            <img src="assets/images/emotion.svg" width="200" class="center">
-                            <a href="https://sentiment-analysis-saif.herokuapp.com/" class="mt-10 button bg-black fs-s3 white no-underline">See Project</a>
-                        </div>
-                    </div>
-                    <div class="w-100pc md-w-50pc">
-                        <div class="br-8 p-5 m-5 bg-indigo-lightest-10  pointer hover-scale-up-1 ease-300">
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Tableau</div>
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Python</div>
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Supervised ML</div>
-                            <div class="indigo-lightest fw-600 fs-m1">Length of Stay Prediction</div>
-                            <img src="assets/images/bed.svg" width="200" class="center">
-                            <a href="https://docs.google.com/presentation/d/e/2PACX-1vRwUuISXxw1tp_PG0wsqnnKcTGagn1m4gOSdHMLEF_Kt9zBVyhPPHgXXyE2sCeLFdrEBe6ig4F9fxkL/pub?start=false&loop=false&delayms=3000" class="mt-10 button bg-black fs-s3 white no-underline">
-                                See Project</a>
-                        </div>
-                    </div>
+    <main>
+        <section id="home" class="min-h-screen flex items-center justify-center text-center p-8 bg-white">
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:space-x-8 animate-fade-in-up">
+                <div class="mb-4 md:mb-0">
+                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold mb-4">Hi!</h1>
+                    <p class="text-xl md:text-2xl lg:text-3xl text-gray-600">I'm Saif, a Data Analyst.</p>
                 </div>
+                <img src="assets/images/ai_brain.gif" alt="AI Brain" class="w-48 h-48 md:w-80 md:h-80 rounded-full">
             </div>
-            <div class="p-10 md-p-l10 flex justify-center items-center flex-column text-center">
-                <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                    <span class="border-b bc-indigo bw-4">Projects</span>
-                </h2>
-                <h2 class="white fs-l3 fw-900"><br>Data Visualization</h2>
-                <div class="flex flex-column md-flex-row md-w-80pc mx-auto">
-                    <div class="w-100pc md-w-50pc">
-                        <div class="br-8 p-5 m-5 bg-indigo-lightest-10  pointer hover-scale-up-1 ease-300">
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Tableau</div>
-                            <div class="indigo-lightest fw-600 fs-m1">COVID-19</div>
-                            <img src="assets/images/covid.svg" width="200" class="center">
-                            <a href="covid-19.html" class="mt-10 button bg-black fs-s3 white no-underline">See Project</a>
+        </section>
+
+        ---
+
+        <section id="projects" class="py-20 md:py-32 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in">Projects</h2>
+                
+                <div class="project-slider">
+                    <div class="p-4 md:p-8">
+                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg animate-fade-in apple-card">
+                            <h3 class="text-3xl md:text-4xl font-bold mb-8">Artificial Intelligence</h3>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                                <div class="bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-200">
+                                    <img src="assets/images/money.svg" alt="Loan Default" class="w-24 h-24 mx-auto mb-4">
+                                    <h4 class="text-xl font-semibold mb-2">Loan Default Prediction</h4>
+                                    <p class="text-sm text-gray-600 mb-4">SQL, Python, Supervised ML</p>
+                                    <a href="loandefault.html" class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View Project</a>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-200">
+                                    <img src="assets/images/bed.svg" alt="Length of Stay" class="w-24 h-24 mx-auto mb-4">
+                                    <h4 class="text-xl font-semibold mb-2">Length of Stay Prediction</h4>
+                                    <p class="text-sm text-gray-600 mb-4">Tableau, Python, Supervised ML</p>
+                                    <a href="#" class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View Project</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="w-100pc md-w-50pc">
-                        <div class="br-8 p-5 m-5 bg-indigo-lightest-10  pointer hover-scale-up-1 ease-300">
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Selenium</div>
-                            <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Python</div>
-                            <div class="indigo-lightest fw-600 fs-m1">Zomato Webscrape</div>
-                            <img src="assets/images/tomato.svg" width="200" class="center">
-                            <a href="zomato.html" class="mt-10 button bg-black fs-s3 white no-underline">See Project</a>
+
+                    <div class="p-4 md:p-8">
+                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg animate-fade-in apple-card">
+                            <h3 class="text-3xl md:text-4xl font-bold mb-8">Data Visualization</h3>
+                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                                <div class="bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-200">
+                                    <img src="assets/images/covid.svg" alt="COVID-19" class="w-24 h-24 mx-auto mb-4">
+                                    <h4 class="text-xl font-semibold mb-2">COVID-19 Dashboard</h4>
+                                    <p class="text-sm text-gray-600 mb-4">Tableau</p>
+                                    <a href="covid-19.html" class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View Project</a>
+                                </div>
+                                <div class="bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-200">
+                                    <img src="assets/images/tomato.svg" alt="Zomato" class="w-24 h-24 mx-auto mb-4">
+                                    <h4 class="text-xl font-semibold mb-2">Zomato Webscrape</h4>
+                                    <p class="text-sm text-gray-600 mb-4">Selenium, Python</p>
+                                    <a href="zomato.html" class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View Project</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="p-10 md-p-l10 flex justify-center items-center flex-column text-center">
-                <h2 class="white fs-l3 fw-900">Data Engineering</h2>
-                <a href="#" class="button-md bg-indigo white fs-s3 br-4 black fw-600 no-underline m-5">Coming soon</a>
-            </div>
-        </div>
-        <ul class="absolute list-none w-100pc flex justify-between top-50pc">
-            <li><button
-                    class="prev ml-10 br-round border-indigo-lightest indigo-lightest  bg-transparent flex justify-center items-center p-2 focus-indigo-lighter outline-none"><i
-                        data-feather="chevron-left"></i></button></li>
-            <li><button
-                    class="next mr-10 br-round border-indigo-lightest indigo-lightest  bg-transparent flex justify-center items-center p-2  focus-indigo-lighter outline-none"><i
-                        data-feather="chevron-right"></i></button></li>
-        </ul>
-    </section>
+        </section>
 
-    <!-- big text -->
-    <section class="p-10 md-py-10" id="education">
-        <div class="w-100pc md-w-70pc mx-auto py-10 center" style="text-align:center;">
-            <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                <span class="border-b bc-indigo bw-4">Education</span>
-            </h2>
-        </div>
-    </section>
+        ---
 
-    <!-- pricing -->
-    <section>
-        <div class="row set">
-            <div class="column">
-                <img src="assets/images/school.svg" style="width:30%">
-            </div>
-            <div class="column">
-                <img src="assets/images/graduation.svg" style="width:30%">
-            </div>
-        </div>
-        <div class="row set">
-            <div class="column">
-                <h2 class="white" style="margin-bottom:45px;">University of Toronto</h2>
-                <h3 class="white" style="margin-bottom:10px;">Honours Bachelor of Science</h3>
-                <h4 class="white">Major: Psychology <br> Minors: Computer Science & Mathematics</h4>
-            </div>
-            <div class="column">
-                <h2 class="white" style="margin-bottom:10px;">Toronto Institute of <br> Data Science and Technology </h2>
-                <h3 class="white" style="margin-bottom:10px;">Data Science Diploma</h3>
-                <h4 class="white" style="margin-bottom:10%;">Applied Data Science and Big Data</h4>
-            </div>
-        </div>
-    </section>
-
-
-    <section class="relative bg-indigo-lightest-10" id="skills">
-        <div class="w-100pc md-w-70pc mx-auto py-10 center" style="text-align:center;">
-            <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                <span class="border-b bc-indigo bw-4">Skills</span></h2>
-        </div>
-        <div class="row">
-            <div class="column" style="text-align: center;">
-                <img src="assets/images/coding.svg" style="width:20%;">
-                <h4 class="white fw-600 fs-m3 mb-5">Programming</h4>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Python</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">SQL</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Bash</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">HTML/CSS</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Java</div>
-            </div>
-            <div class="column" style="text-align: center;">
-                <img src="assets/images/infographic.svg" style="width:20%;">
-                <h4 class="white fw-600 fs-m3 mb-5">Data Visualization</h4>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Tableau</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Quicksight</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Seaborn</div>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column" style="text-align: center;">
-                <img src="assets/images/ml.svg" style="width:20%;">
-                <h4 class="white fw-600 fs-m3 mb-5">Machine Learning</h4>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Numpy</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Pandas</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Sklearn</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Spark</div>
-            </div>
-            <div class="column" style="text-align: center;">
-                <img src="assets/images/cloud.svg" style="width:20%;">
-                <h4 class="white fw-600 fs-m3 mb-5">Cloud</h4>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">AWS</div>
-                <div class="inline-block bg-indigo indigo-lightest br-3 px-4 py-1 mb-10 fs-s4 uppercase">Google Cloud</div>
-            </div>
-        </div>
-        <h1 style="margin-top: 5%;;"><br></h1>
-    </section>
-
-    <section class="p-10 md-py-10" id="contact">
-        <div class="w-100pc md-w-70pc mx-auto py-10 center" style="text-align:center;">
-            <h2 class="white fs-l2 md-fs-xl1 fw-900 lh-2">
-                <span class="border-b bc-indigo bw-4">Contact</span>
-            </h2>
-        </div>
-        <div class="row">
-            <div class="column" style="text-align: center;">
-                <img src="assets/images/email.svg" style="width:15%;">
-                <h4 class="white fw-600 fs-m3 mb-5">E-Mail: <br>saifmorahman@gmail.com</h4>
-            </div>
-            <div class="column" style="text-align: center;">
-                <a href="https://www.linkedin.com/in/saifrahman10/"><img src="assets/images/linkedin.svg" style="width:15%;"></a>
-                <h4 class="white fw-600 fs-m3 mb-5">Linkedin: <br> saifrahman10</h4>
-            </div>
-        </div>
-        <div class="row">
-            <div class="column" style="text-align: center;">
-                <img src="assets/images/phone.svg" style="width:15%;">
-                <h4 class="white fw-600 fs-m3 mb-5">Phone: <br> (905)-308-4856</h4>
-            </div>
-            <div class="column" style="text-align: center;">
-                <a href="https://github.com/saifrahman10"><img src="assets/images/github.svg" style="width:15%;"></a>
-                <h4 class="white fw-600 fs-m3 mb-5">Github: <br> saifrahman10</h4>
-            </div>
-        </div>
-    </section>
-
-    <!-- footer -->
-    <footer class="p-5 md-p-l5">
-        <div class="flex flex-wrap">
-            <div class="md-w-25pc mb-10">
-                <img src="assets/images/logo.png" class="w-l5" alt="">
-                <div class="white opacity-70 fs-s2 mt-4 md-pr-10">
-                    <p>Soluta voluptate et optio. Eos quasi impedit sapiente aliquid eius eligendi at. Necessitatibus
-                        magni et sed quod quas minima.</p>
-                    <br>
-                    <p>Soluta voluptate et optio. Eos quasi impedit sapiente aliquid eius eligendi at. Necessitatibus
-                        magni et sed quod quas minima.</p>
-                </div>
-            </div>
-            <div class="w-100pc md-w-50pc">
-                <div class="flex justify-around">
-                    <div class="w-33pc md-px-10 mb-10">
-                        <h5 class="white">Company</h5>
-                        <ul class="list-none mt-5 fs-s2">
-                            <li class="my-3"><a href="#" class="white opacity-70 no-underline hover-underline">About
-                                    Us</a></li>
-                            <li class="my-3"><a href="#" class="white opacity-70 no-underline hover-underline">Jobs</a>
-                            </li>
-                            <li class="my-3"><a href="#"
-                                    class="white opacity-70 no-underline hover-underline">Contact</a></li>
-                            <li class="my-3"><a href="#" class="white opacity-70 no-underline hover-underline">Media</a>
-                            </li>
-                        </ul>
+        <section id="education" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in">Education</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg text-center apple-card animate-fade-in">
+                        <img src="assets/images/digitalization.png" alt="School" class="w-20 h-20 mx-auto mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Smith School of Business</h3>
+                        <p class="text-lg text-gray-600">Masters of Management in Artificial Intelligence</p>
                     </div>
-                    <div class="w-33pc md-px-10 mb-10">
-                        <h5 class="white">Product</h5>
-                        <ul class="list-none mt-5 fs-s2">
-                            <li class="my-3"><a href="#" class="white opacity-70 no-underline hover-underline">About
-                                    Us</a></li>
-                            <li class="my-3"><a href="#" class="white opacity-70 no-underline hover-underline">Jobs</a>
-                            </li>
-                            <li class="my-3"><a href="#"
-                                    class="white opacity-70 no-underline hover-underline">Contact</a></li>
-                            <li class="my-3"><a href="#" class="white opacity-70 no-underline hover-underline">Media</a>
-                            </li>
-                        </ul>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg text-center apple-card animate-fade-in">
+                        <img src="assets/images/graduation.svg" alt="Graduation Cap" class="w-20 h-20 mx-auto mb-6">
+                        <h3 class="text-2xl font-bold mb-2">University of Toronto</h3>
+                        <p class="text-lg text-gray-600">Honours Bachelor of Science</p>
+                        <p class="text-sm text-gray-500 mt-2">Major: Psychology <br> Minors: Computer Science & Mathematics</p>
                     </div>
-                    <div class="w-33pc md-px-10 mb-10">
-                        <h5 class="white">Support</h5>
-                        <ul class="list-none mt-5 fs-s2">
-                            <li class="my-3"><a href="#" class="white opacity-70 no-underline hover-underline">About
-                                    Us</a></li>
-                            <li class="my-3"><a href="#" class="white opacity-70 no-underline hover-underline">Jobs</a>
-                            </li>
-                            <li class="my-3"><a href="#"
-                                    class="white opacity-70 no-underline hover-underline">Contact</a></li>
-                            <li class="my-3"><a href="#" class="white opacity-70 no-underline hover-underline">Media</a>
-                            </li>
-                        </ul>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg text-center apple-card animate-fade-in">
+                        <img src="assets/images/school.svg" alt="School" class="w-20 h-20 mx-auto mb-6">
+                        <h3 class="text-2xl font-bold mb-2">Toronto Institute of Data Science and Technology</h3>
+                        <p class="text-lg text-gray-600">Data Science Diploma</p>
+                        <p class="text-sm text-gray-500 mt-2">Applied Data Science and Big Data</p>
                     </div>
                 </div>
             </div>
-            <div class="w-100pc md-w-25pc">
-                <div class="flex justify-around my-8">
-                    <a href="https://github.com/saifrahman10" class="relative p-5 bg-indigo br-round white hover-scale-up-1 ease-400"><i
-                            data-feather="github" class="absolute-center h-4"></i></a>
-                    <a href="https://www.linkedin.com/in/saifrahman10/" class="relative p-5 bg-indigo br-round white hover-scale-up-1 ease-400"><i
-                            data-feather="linkedin" class="absolute-center h-4"></i></a>
+        </section>
+
+        ---
+
+        <section id="skills" class="py-20 md:py-32 bg-gray-100">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in">Skills</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                        <img src="assets/images/coding.svg" alt="Programming" class="w-16 h-16 mb-4">
+                        <h3 class="text-xl font-bold mb-4">Programming</h3>
+                        <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
+                            <span>Python</span><span>•</span><span>SQL</span><span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                        <img src="assets/images/infographic.svg" alt="Data Visualization" class="w-16 h-16 mb-4">
+                        <h3 class="text-xl font-bold mb-4">Data Visualization</h3>
+                        <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
+                            <span>Tableau</span><span>•</span><span>PowerBI</span><span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                        <img src="assets/images/ml.svg" alt="Machine Learning" class="w-16 h-16 mb-4">
+                        <h3 class="text-xl font-bold mb-4">Machine Learning</h3>
+                        <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
+                            <span>Numpy</span><span>•</span><span>Pandas</span><span>•</span><span>Sklearn</span><span>•</span><span>Spark</span>
+                        </div>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                        <img src="assets/images/cloud.svg" alt="Cloud" class="w-16 h-16 mb-4">
+                        <h3 class="text-xl font-bold mb-4">Cloud</h3>
+                        <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
+                            <span>Azure</span><span>•</span><span>Google Cloud</span><span>Salesforce</span><span>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
+
+        ---
+
+        <section id="contact" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center">
+                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in">Contact</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                        <img src="assets/images/email.svg" alt="Email" class="w-16 h-16 mb-4">
+                        <h3 class="text-lg font-bold">Email</h3>
+                        <p class="text-sm text-gray-600 mt-2">saifmorahman@gmail.com</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                        <a href="https://www.linkedin.com/in/saifrahman10/" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/images/linkedin.svg" alt="LinkedIn" class="w-16 h-16 mb-4">
+                        </a>
+                        <h3 class="text-lg font-bold">LinkedIn</h3>
+                        <a href="https://www.linkedin.com/in/saifrahman10/" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-600 mt-2 hover:underline">saifrahman10</a>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                        <img src="assets/images/phone.svg" alt="Phone" class="w-16 h-16 mb-4">
+                        <h3 class="text-lg font-bold">Phone</h3>
+                        <p class="text-sm text-gray-600 mt-2">(905)-308-4856</p>
+                    </div>
+                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                        <a href="https://github.com/saifrahman10" target="_blank" rel="noopener noreferrer">
+                            <img src="assets/images/github.svg" alt="GitHub" class="w-16 h-16 mb-4">
+                        </a>
+                        <h3 class="text-lg font-bold">Github</h3>
+                        <a href="https://github.com/saifrahman10" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-600 mt-2 hover:underline">saifrahman10</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="py-8 bg-gray-100 text-center text-gray-500 text-xs">
+        <p>&copy; 2025 S. Rahman. All rights reserved.</p>
     </footer>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://unpkg.com/feather-icons"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@15.0.0/dist/smooth-scroll.polyfills.min.js"></script>
-    <script src="assets/js/script.js"></script>
-</body>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            // Initialize the Slick Carousel
+            $('.project-slider').slick({
+                dots: true,
+                infinite: true,
+                speed: 800,
+                slidesToShow: 1,
+                adaptiveHeight: true,
+                autoplay: true,
+                autoplaySpeed: 5000,
+                fade: true,
+                cssEase: 'linear',
+                arrows: false,
+            });
+        });
+    </script>
+</body>
 </html>
