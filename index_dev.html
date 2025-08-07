@@ -14,19 +14,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>S. Rahman - Data Science Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+    
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-        }
-        .hex-transparent-header {
-            /* Use a solid hex color for the background, then apply opacity */
-            background-color: #2b2b2a; 
-            /* The opacity value below controls transparency (0.9 is 90% opaque) */
-            opacity: 0.9;
-            /* Optional: Keep the blur effect for an "Apple-like" feel */
-            backdrop-filter: blur(20px);
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         .apple-card {
             transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -68,54 +62,77 @@
 
 <body class="bg-white text-gray-900">
 
-    <header id="site-header" class="fixed top-0 w-full z-20 hex-transparent-header">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-semibold text-gray-100">
-            <div class="flex items-center space-x-8">
-                <a href="#home" class="text-xl font-bold text-gray-100 tracking-widest hover:text-gray-900 transition-colors duration-300">S. Rahman</a>
+    <header class="fixed top-0 w-full z-20 bg-white shadow-md">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-semibold text-gray-600">
+            <div class="flex items-center">
+                <a href="#home" class="text-xl font-bold text-gray-900 tracking-widest hover:text-gray-900 transition-colors duration-300">S. Rahman</a>
             </div>
-            <ul class="hidden md:flex flex-grow justify-center space-x-8 list-none">
+            <ul class="hidden md:flex flex-grow justify-end space-x-8 list-none">
                 <li><a href="#projects" class="hover:text-gray-900 transition-colors duration-300">Projects</a></li>
                 <li><a href="#education" class="hover:text-gray-900 transition-colors duration-300">Education</a></li>
                 <li><a href="#skills" class="hover:text-gray-900 transition-colors duration-300">Skills</a></li>
                 <li><a href="#contact" class="hover:text-gray-900 transition-colors duration-300">Contact</a></li>
                 <li><a href="https://saifmorahman.medium.com/" class="hover:text-gray-900 transition-colors duration-300" target="_blank" rel="noopener noreferrer">Blog</a></li>
             </ul>
-            <div class="flex items-center space-x-4">
-                </div>
         </nav>
     </header>
 
     <main>
         <section id="home" class="min-h-screen flex items-center justify-center text-center p-8 bg-white">
-            <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:space-x-8 animate-fade-in-up">
-                <div class="mb-4 md:mb-0">
-                    <h1 class="text-6xl md:text-8xl lg:text-9xl font-extrabold mb-4">Hi!</h1>
-                    <p class="text-xl md:text-2xl lg:text-3xl text-gray-600">I'm Saif, a Data Analyst.</p>
+            <div class="container mx-auto flex flex-col md:flex-row items-center justify-center md:space-x-12 animate-fade-in-up">
+                <div class="mb-8 md:mb-0 text-left">
+                    <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: 5rem; font-weight: 900; line-height: 0.9; color: #2d3748;">Data-</h1>
+                    <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: 5rem; font-weight: 900; line-height: 0.9; color: #2d3748; margin-left: 6rem;">Driven</h1>
+                    <h1 style="font-family: 'Bebas Neue', sans-serif; font-size: 5rem; font-weight: 900; line-height: 0.9; color: #2d3748;">Creative</h1>
+                    <p class="text-xl md:text-2xl lg:text-3xl font-medium text-gray-600 mt-6">Hi, I'm Saif!</p>
                 </div>
-                <img src="assets/images/ai_brain.gif" alt="AI Brain" class="w-48 h-48 md:w-80 md:h-80 rounded-full">
+                <img src="assets/images/ai_brain.gif" alt="AI Brain" class="w-48 h-48 md:w-[30rem] md:h-[30rem] rounded-full">
             </div>
         </section>
 
         ---
 
-        <section id="projects" class="py-20 md:py-32 bg-gray-100">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in">Projects</h2>
+        <section id="about" class="py-20 md:py-32 bg-gray-100">
+            <div class="container mx-auto px-6 max-w-4xl">
+                <h2 class="text-4xl md:text-6xl font-bold mb-8 animate-fade-in text-gray-600">About</h2>
+                <p class="text-lg md:text-xl leading-relaxed animate-fade-in">
+                    Welcome to my portfolio. I'm a passionate data analyst with a background in artificial intelligence and computer science. My expertise lies in building machine learning models, creating dynamic data visualizations, and developing robust data engineering pipelines. My goal is to leverage data to solve complex problems and drive impactful decisions.
+                </p>
+            </div>
+        </section>
+
+        ---
+
+        <section id="projects" class="py-20 md:py-32 bg-white">
+            <div class="container mx-auto px-6 text-center max-w-6xl">
+                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in text-gray-600">Projects</h2>
                 
-                <div class="project-slider">
+                <div class="project-slider relative">
                     <div class="p-4 md:p-8">
-                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg animate-fade-in apple-card">
-                            <h3 class="text-3xl md:text-4xl font-bold mb-8">Artificial Intelligence</h3>
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                                <div class="bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-200">
-                                    <img src="assets/images/money.svg" alt="Loan Default" class="w-24 h-24 mx-auto mb-4">
-                                    <h4 class="text-xl font-semibold mb-2">Loan Default Prediction</h4>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Artificial Intelligence</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            <a href="https://queensuca-my.sharepoint.com/:w:/g/personal/25ph13_queensu_ca/EVO_HPUqLIRIkyC3quXw9WsBC8HR8n5bKirTOKNjtwJp3w?e=4ZgYda" target="_blank" rel="noopener noreferrer" class="block">
+                                <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card">
+                                    <img src="assets/images/framework.png" alt="AI Ethics" class="w-full h-48 object-contain object-center p-8">
+                                    <div class="p-8 text-center">
+                                        <h4 class="text-xl font-bold mb-2 text-gray-900">AI Ethics Framework</h4>
+                                        <p class="text-sm text-gray-600 mb-4">Build AI, Responsibly.</p>
+                                        <span class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View Project</span>
+                                    </div>
+                                </div>
+                            </a>
+                            <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card">
+                                <img src="assets/images/money.svg" alt="Loan Default Prediction" class="w-full h-48 object-contain object-center p-8">
+                                <div class="p-8 text-center">
+                                    <h4 class="text-xl font-bold mb-2 text-gray-900">Loan Default Prediction</h4>
                                     <p class="text-sm text-gray-600 mb-4">SQL, Python, Supervised ML</p>
                                     <a href="loandefault.html" class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View Project</a>
                                 </div>
-                                <div class="bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-200">
-                                    <img src="assets/images/bed.svg" alt="Length of Stay" class="w-24 h-24 mx-auto mb-4">
-                                    <h4 class="text-xl font-semibold mb-2">Length of Stay Prediction</h4>
+                            </div>
+                            <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card">
+                                <img src="assets/images/bed.svg" alt="Length of Stay Prediction" class="w-full h-48 object-contain object-center p-8">
+                                <div class="p-8 text-center">
+                                    <h4 class="text-xl font-bold mb-2 text-gray-900">Length of Stay Prediction</h4>
                                     <p class="text-sm text-gray-600 mb-4">Tableau, Python, Supervised ML</p>
                                     <a href="#" class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View Project</a>
                                 </div>
@@ -124,18 +141,20 @@
                     </div>
 
                     <div class="p-4 md:p-8">
-                        <div class="bg-white rounded-2xl p-8 md:p-12 shadow-lg animate-fade-in apple-card">
-                            <h3 class="text-3xl md:text-4xl font-bold mb-8">Data Visualization</h3>
-                            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
-                                <div class="bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-200">
-                                    <img src="assets/images/covid.svg" alt="COVID-19" class="w-24 h-24 mx-auto mb-4">
-                                    <h4 class="text-xl font-semibold mb-2">COVID-19 Dashboard</h4>
+                        <h3 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Data Visualization</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                            <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card">
+                                <img src="assets/images/covid.svg" alt="COVID-19" class="w-full h-48 object-contain object-center p-8">
+                                <div class="p-8 text-center">
+                                    <h4 class="text-xl font-bold mb-2 text-gray-900">COVID-19 Dashboard</h4>
                                     <p class="text-sm text-gray-600 mb-4">Tableau</p>
                                     <a href="covid-19.html" class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View Project</a>
                                 </div>
-                                <div class="bg-gray-50 rounded-xl p-6 transition-all duration-300 hover:bg-gray-200">
-                                    <img src="assets/images/tomato.svg" alt="Zomato" class="w-24 h-24 mx-auto mb-4">
-                                    <h4 class="text-xl font-semibold mb-2">Zomato Webscrape</h4>
+                            </div>
+                            <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card">
+                                <img src="assets/images/tomato.svg" alt="Zomato" class="w-full h-48 object-contain object-center p-8">
+                                <div class="p-8 text-center">
+                                    <h4 class="text-xl font-bold mb-2 text-gray-900">Zomato Webscrape</h4>
                                     <p class="text-sm text-gray-600 mb-4">Selenium, Python</p>
                                     <a href="zomato.html" class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View Project</a>
                                 </div>
@@ -143,29 +162,38 @@
                         </div>
                     </div>
                 </div>
+                
+                <div class="hidden md:block absolute inset-y-0 w-full flex items-center justify-between pointer-events-none px-4">
+                    <button class="slick-prev text-gray-800 hover:text-gray-600 transition-colors duration-300 pointer-events-auto bg-white p-3 rounded-full shadow-lg">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    </button>
+                    <button class="slick-next text-gray-800 hover:text-gray-600 transition-colors duration-300 pointer-events-auto bg-white p-3 rounded-full shadow-lg">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    </button>
+                </div>
             </div>
         </section>
 
         ---
 
-        <section id="education" class="py-20 md:py-32 bg-white">
+        <section id="education" class="py-20 md:py-32 bg-gray-100">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in">Education</h2>
-                <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in text-gray-600">Education</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
                     <div class="bg-white rounded-2xl p-8 shadow-lg text-center apple-card animate-fade-in">
                         <img src="assets/images/digitalization.png" alt="School" class="w-20 h-20 mx-auto mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Smith School of Business</h3>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">Smith School of Business</h3>
                         <p class="text-lg text-gray-600">Masters of Management in Artificial Intelligence</p>
                     </div>
                     <div class="bg-white rounded-2xl p-8 shadow-lg text-center apple-card animate-fade-in">
                         <img src="assets/images/graduation.svg" alt="Graduation Cap" class="w-20 h-20 mx-auto mb-6">
-                        <h3 class="text-2xl font-bold mb-2">University of Toronto</h3>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">University of Toronto</h3>
                         <p class="text-lg text-gray-600">Honours Bachelor of Science</p>
-                        <p class="text-sm text-gray-500 mt-2">Major: Psychology <br> Minors: Computer Science & Mathematics</p>
+                        <p class="text-sm text-gray-500 mt-2">Major: Psychology<br> Minors: Computer Science & Mathematics</p>
                     </div>
                     <div class="bg-white rounded-2xl p-8 shadow-lg text-center apple-card animate-fade-in">
                         <img src="assets/images/school.svg" alt="School" class="w-20 h-20 mx-auto mb-6">
-                        <h3 class="text-2xl font-bold mb-2">Toronto Institute of Data Science and Technology</h3>
+                        <h3 class="text-2xl font-bold mb-2 text-gray-900">Toronto Institute of Data Science</h3>
                         <p class="text-lg text-gray-600">Data Science Diploma</p>
                         <p class="text-sm text-gray-500 mt-2">Applied Data Science and Big Data</p>
                     </div>
@@ -175,36 +203,36 @@
 
         ---
 
-        <section id="skills" class="py-20 md:py-32 bg-gray-100">
+        <section id="skills" class="py-20 md:py-32 bg-white">
             <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in">Skills</h2>
+                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in text-gray-600">Skills</h2>
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                    <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
                         <img src="assets/images/coding.svg" alt="Programming" class="w-16 h-16 mb-4">
-                        <h3 class="text-xl font-bold mb-4">Programming</h3>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900">Programming</h3>
                         <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
-                            <span>Python</span><span>•</span><span>SQL</span><span>
+                            <span>Python</span><span>
                         </div>
                     </div>
-                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                    <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
                         <img src="assets/images/infographic.svg" alt="Data Visualization" class="w-16 h-16 mb-4">
-                        <h3 class="text-xl font-bold mb-4">Data Visualization</h3>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900">Data Visualization</h3>
                         <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
-                            <span>Tableau</span><span>•</span><span>PowerBI</span><span>
+                            <span>Tableau</span><span>•</span><span>PowerBI</span><span>•</span><span>Seaborn</span>
                         </div>
                     </div>
-                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                    <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
                         <img src="assets/images/ml.svg" alt="Machine Learning" class="w-16 h-16 mb-4">
-                        <h3 class="text-xl font-bold mb-4">Machine Learning</h3>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900">Machine Learning</h3>
                         <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
                             <span>Numpy</span><span>•</span><span>Pandas</span><span>•</span><span>Sklearn</span><span>•</span><span>Spark</span>
                         </div>
                     </div>
-                    <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+                    <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
                         <img src="assets/images/cloud.svg" alt="Cloud" class="w-16 h-16 mb-4">
-                        <h3 class="text-xl font-bold mb-4">Cloud</h3>
+                        <h3 class="text-xl font-bold mb-4 text-gray-900">Cloud</h3>
                         <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
-                            <span>Azure</span><span>•</span><span>Google Cloud</span><span>Salesforce</span><span>
+                            <span>Azure</span><span>•</span><span>Google Cloud</span><span>•</span><span>Salesforce</span>
                         </div>
                     </div>
                 </div>
@@ -213,32 +241,32 @@
 
         ---
 
-        <section id="contact" class="py-20 md:py-32 bg-white">
-            <div class="container mx-auto px-6 text-center">
-                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in">Contact</h2>
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <section id="contact" class="py-20 md:py-32 bg-gray-100">
+            <div class="container mx-auto px-6 text-center max-w-4xl">
+                <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in text-gray-600">Contact</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
                     <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
                         <img src="assets/images/email.svg" alt="Email" class="w-16 h-16 mb-4">
-                        <h3 class="text-lg font-bold">Email</h3>
+                        <h3 class="text-lg font-bold text-gray-900">Email</h3>
                         <p class="text-sm text-gray-600 mt-2">saifmorahman@gmail.com</p>
                     </div>
                     <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
                         <a href="https://www.linkedin.com/in/saifrahman10/" target="_blank" rel="noopener noreferrer">
                             <img src="assets/images/linkedin.svg" alt="LinkedIn" class="w-16 h-16 mb-4">
                         </a>
-                        <h3 class="text-lg font-bold">LinkedIn</h3>
+                        <h3 class="text-lg font-bold text-gray-900">LinkedIn</h3>
                         <a href="https://www.linkedin.com/in/saifrahman10/" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-600 mt-2 hover:underline">saifrahman10</a>
                     </div>
                     <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
                         <img src="assets/images/phone.svg" alt="Phone" class="w-16 h-16 mb-4">
-                        <h3 class="text-lg font-bold">Phone</h3>
+                        <h3 class="text-lg font-bold text-gray-900">Phone</h3>
                         <p class="text-sm text-gray-600 mt-2">(905)-308-4856</p>
                     </div>
                     <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
                         <a href="https://github.com/saifrahman10" target="_blank" rel="noopener noreferrer">
                             <img src="assets/images/github.svg" alt="GitHub" class="w-16 h-16 mb-4">
                         </a>
-                        <h3 class="text-lg font-bold">Github</h3>
+                        <h3 class="text-lg font-bold text-gray-900">Github</h3>
                         <a href="https://github.com/saifrahman10" target="_blank" rel="noopener noreferrer" class="text-sm text-gray-600 mt-2 hover:underline">saifrahman10</a>
                     </div>
                 </div>
@@ -254,18 +282,17 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
     <script>
         $(document).ready(function(){
-            // Initialize the Slick Carousel
             $('.project-slider').slick({
-                dots: true,
+                dots: false,
                 infinite: true,
                 speed: 800,
                 slidesToShow: 1,
                 adaptiveHeight: true,
-                autoplay: true,
-                autoplaySpeed: 5000,
+                autoplay: false, // Autoplay removed for manual navigation
                 fade: true,
                 cssEase: 'linear',
-                arrows: false,
+                nextArrow: '<button class="slick-next md:block hidden absolute top-1/2 right-4 transform -translate-y-1/2 text-gray-800 hover:text-gray-600 transition-colors duration-300 pointer-events-auto bg-white p-3 rounded-full shadow-lg"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg></button>',
+                prevArrow: '<button class="slick-prev md:block hidden absolute top-1/2 left-4 transform -translate-y-1/2 text-gray-800 hover:text-gray-600 transition-colors duration-300 pointer-events-auto bg-white p-3 rounded-full shadow-lg"><svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg></button>',
             });
         });
     </script>
