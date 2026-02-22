@@ -13,16 +13,18 @@
 
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>S. Rahman - Data Science Portfolio</title>
+  <title>Saif Rahman — AI Product & Strategy</title>
+  <meta name="description"
+    content="Saif Rahman — AI Product professional specializing in responsible AI, product strategy, and human-centered AI system design. Based in Toronto.">
+  <meta property="og:title" content="Saif Rahman — AI Product & Strategy">
+  <meta property="og:description"
+    content="AI Product professional at the intersection of technology, psychology, and business decision-making.">
+  <meta property="og:url" content="https://saifrahman10.github.io/">
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;700;800;900&display=swap"
     rel="stylesheet">
-
-  <!-- Slick Carousel -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick-theme.min.css" />
 
   <style>
     body {
@@ -37,31 +39,6 @@
     .apple-card:hover {
       transform: translateY(-5px);
       box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
-    }
-
-    /* Project carousel arrows: white translucent circles with black chevrons */
-    .project-slider .slick-prev,
-    .project-slider .slick-next {
-      background: rgba(255, 255, 255, 0.85) !important;
-      border: none;
-      width: 48px;
-      height: 48px;
-      border-radius: 9999px;
-      display: flex !important;
-      align-items: center;
-      justify-content: center;
-      box-shadow: 0 6px 16px rgba(255, 255, 255, 0.8);
-    }
-
-    .project-slider .slick-prev:hover,
-    .project-slider .slick-next:hover {
-      background: rgba(255, 255, 255, 0.95) !important;
-    }
-
-    .project-slider .slick-prev:before,
-    .project-slider .slick-next:before {
-      color: #000;
-      font-size: 24px;
     }
 
     .animate-fade-in {
@@ -91,6 +68,131 @@
     .animation-delay-100 {
       animation-delay: 0.1s;
     }
+
+    /* Hero CTA button */
+    .btn-primary {
+      display: inline-block;
+      padding: 14px 36px;
+      background-color: #2d3748;
+      color: #fff;
+      font-weight: 600;
+      border-radius: 9999px;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-primary:hover {
+      background-color: #1a202c;
+      transform: translateY(-2px);
+    }
+
+    /* Pillar highlight cards */
+    .pillar-card {
+      background: #fff;
+      border: 1px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .pillar-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.06);
+    }
+
+    /* In Progress badge */
+    .badge-in-progress {
+      background-color: #f0f4ff;
+      color: #4a6fa5;
+      border: 1px solid #c0cfea;
+      border-radius: 12px;
+      padding: 2px 10px;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    /* Thought leadership coming soon card */
+    .coming-soon-card {
+      background: #f7fafc;
+      border: 1px dashed #cbd5e0;
+      border-radius: 16px;
+      padding: 32px;
+      text-align: center;
+      color: #718096;
+    }
+
+    /* Contact mailto link */
+    .contact-link {
+      display: inline-block;
+      padding: 10px 24px;
+      background-color: #edf2f7;
+      color: #2d3748;
+      border-radius: 9999px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background-color 0.3s ease;
+    }
+
+    .contact-link:hover {
+      background-color: #e2e8f0;
+    }
+
+    /* Mobile hamburger menu */
+    .mobile-menu-btn {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .mobile-menu-btn span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: #2d3748;
+      border-radius: 2px;
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+
+    .mobile-nav {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background: #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      padding: 16px 24px;
+    }
+
+    .mobile-nav.active {
+      display: block;
+    }
+
+    .mobile-nav a {
+      display: block;
+      padding: 10px 0;
+      color: #4a5568;
+      font-weight: 600;
+      text-decoration: none;
+      border-bottom: 1px solid #f0f0f0;
+    }
+
+    .mobile-nav a:last-child {
+      border-bottom: none;
+    }
+
+    .mobile-nav a:hover {
+      color: #1a202c;
+    }
+
+    @media (max-width: 768px) {
+      .mobile-menu-btn {
+        display: flex;
+      }
+    }
   </style>
 </head>
 
@@ -100,241 +202,320 @@
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-semibold text-gray-600">
       <div class="flex items-center">
         <a href="#home"
-          class="text-xl font-bold text-gray-900 tracking-widest hover:text-gray-900 transition-colors duration-300">S.
+          class="text-xl font-bold text-gray-900 tracking-widest hover:text-gray-900 transition-colors duration-300">Saif
           Rahman</a>
       </div>
       <ul class="hidden md:flex flex-grow justify-end space-x-8 list-none">
+        <li><a href="#about" class="hover:text-gray-900 transition-colors duration-300">About</a></li>
         <li><a href="#projects" class="hover:text-gray-900 transition-colors duration-300">Projects</a></li>
-        <li><a href="#education" class="hover:text-gray-900 transition-colors duration-300">Education</a></li>
-        <li><a href="#skills" class="hover:text-gray-900 transition-colors duration-300">Technical Skills</a></li>
+        <li><a href="#skills" class="hover:text-gray-900 transition-colors duration-300">Skills</a></li>
+        <li><a href="#thought-leadership" class="hover:text-gray-900 transition-colors duration-300">Thought
+            Leadership</a></li>
         <li><a href="#contact" class="hover:text-gray-900 transition-colors duration-300">Contact</a></li>
-        <li><a href="https://saifmorahman.medium.com/" class="hover:text-gray-900 transition-colors duration-300"
-            target="_blank" rel="noopener noreferrer">Blog</a></li>
       </ul>
+      <!-- Mobile hamburger -->
+      <div class="mobile-menu-btn md:hidden" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
     </nav>
+    <!-- Mobile nav dropdown -->
+    <div class="mobile-nav" id="mobileNav">
+      <a href="#about" onclick="closeMobileMenu()">About</a>
+      <a href="#projects" onclick="closeMobileMenu()">Projects</a>
+      <a href="#skills" onclick="closeMobileMenu()">Skills</a>
+      <a href="#thought-leadership" onclick="closeMobileMenu()">Thought Leadership</a>
+      <a href="#contact" onclick="closeMobileMenu()">Contact</a>
+    </div>
   </header>
 
   <main>
+    <!-- HERO -->
     <section id="home" class="min-h-screen flex items-center justify-center text-center p-8 bg-white">
       <div
         class="container mx-auto flex flex-col md:flex-row items-center justify-center md:space-x-12 animate-fade-in-up">
         <div class="mb-8 md:mb-0 text-left">
           <h1
-            style="font-family: 'Bebas Neue', sans-serif; font-size: 5rem; font-weight: 900; line-height: 0.9; color: #2d3748;">
-            AI-</h1>
-          <h1
-            style="font-family: 'Bebas Neue', sans-serif; font-size: 5rem; font-weight: 900; line-height: 0.9; color: #2d3748; margin-left: 3rem;">
-            Driven</h1>
-          <h1
-            style="font-family: 'Bebas Neue', sans-serif; font-size: 5rem; font-weight: 900; line-height: 0.9; color: #2d3748;">
-            Creative</h1>
-          <p class="text-xl md:text-2xl lg:text-3xl font-medium text-gray-600 mt-6">Hi, I'm Saif!</p>
+            style="font-family: 'Bebas Neue', sans-serif; font-size: 4.5rem; font-weight: 900; line-height: 1; color: #2d3748;">
+            Building AI Products<br>That Earn Trust
+          </h1>
+          <p class="text-lg md:text-xl text-gray-500 mt-6 max-w-lg" style="line-height: 1.7;">
+            I translate AI complexity into products, decisions, and systems that work for people.
+          </p>
+          <div class="mt-8">
+            <a href="#projects" class="btn-primary">See My Work</a>
+          </div>
         </div>
         <img src="assets/images/ai_brain.gif" alt="AI Brain" class="w-48 h-48 md:w-[30rem] md:h-[30rem] rounded-full">
       </div>
     </section>
 
+    <!-- ABOUT -->
     <section id="about" class="py-20 md:py-32 bg-gray-100">
       <div class="container mx-auto px-6 max-w-4xl">
         <h2 class="text-4xl md:text-6xl font-bold mb-8 animate-fade-in text-gray-600">About</h2>
-        <p class="text-lg md:text-xl leading-relaxed animate-fade-in">
-          Welcome to my portfolio. I'm an AI Product professional transitioning from data science
-          into product management and strategy roles. I combine technical depth in machine learning
-          and data analytics with a strong foundation in product thinking—focusing on AI governance,
-          user adoption, and responsible deployment. My goal is to build AI products that solve real
-          problems while earning stakeholder trust through transparency and strategic execution.
-        </p>
-      </div>
-    </section>
-
-    <section id="projects" class="py-20 md:py-32 bg-white">
-      <div class="container mx-auto px-6 text-center max-w-6xl relative">
-        <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in text-gray-600">Projects</h2>
-
-        <div class="project-slider relative">
-          <div class="p-4 md:p-8">
-            <h3 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Artificial Intelligence</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              <a href="https://queensuca-my.sharepoint.com/:w:/g/personal/25ph13_queensu_ca/EVO_HPUqLIRIkyC3quXw9WsBC8HR8n5bKirTOKNjtwJp3w?e=4ZgYda"
-                target="_blank" rel="noopener noreferrer" class="block h-full">
-                <div
-                  class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card h-full flex flex-col">
-                  <img src="assets/images/framework.png" alt="AviationAI Ethics Framework cover"
-                    class="w-full h-48 object-contain object-center p-8">
-                  <div class="p-8 text-center flex-grow flex flex-col justify-between">
-                    <div>
-                      <h4 class="text-xl font-bold mb-2 text-gray-900"> AI Ethics Framework</h4>
-                      <p class="text-sm text-gray-600 mb-4">Build AI, Responsibly.</p>
-                    </div>
-                    <div>
-                      <span
-                        class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View
-                        Project</span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="https://career-sensei.streamlit.app/" target="_blank" rel="noopener noreferrer"
-                class="block h-full">
-                <div
-                  class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card h-full flex flex-col">
-                  <img src="assets/images/sensei.svg" alt="Career Sensei thumbnail"
-                    class="w-full h-48 object-contain object-center p-8">
-                  <div class="p-8 text-center flex-grow flex flex-col justify-between">
-                    <div>
-                      <h4 class="text-xl font-bold mb-2 text-gray-900">Career Sensei</h4>
-                      <p class="text-sm text-gray-600 mb-4">Resume Gap Analysis with RAG & Gemini</p>
-                    </div>
-                    <div>
-                      <span
-                        class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View
-                        Project</span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-              <a href="https://docs.google.com/presentation/d/e/2PACX-1vRwUuISXxw1tp_PG0wsqnnKcTGagn1m4gOSdHMLEF_Kt9zBVyhPPHgXXyE2sCeLFdrEBe6ig4F9fxkL/pub?start=false&loop=false&delayms=3000"
-                target="_blank" rel="noopener noreferrer" class="block h-full">
-                <div
-                  class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card h-full flex flex-col">
-                  <img src="assets/images/bed.svg" alt="Length of Stay Prediction thumbnail"
-                    class="w-full h-48 object-contain object-center p-8">
-                  <div class="p-8 text-center flex-grow flex flex-col justify-between">
-                    <div>
-                      <h4 class="text-xl font-bold mb-2 text-gray-900">Length of Stay Prediction</h4>
-                      <p class="text-sm text-gray-600 mb-4">Tableau, Python, Supervised ML</p>
-                    </div>
-                    <div>
-                      <span
-                        class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View
-                        Project</span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-
-          <div class="p-4 md:p-8">
-            <h3 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Data Visualization</h3>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-              <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card">
-                <img src="assets/images/covid.svg" alt="COVID-19 Dashboard thumbnail"
-                  class="w-full h-48 object-contain object-center p-8">
-                <div class="p-8 text-center">
-                  <h4 class="text-xl font-bold mb-2 text-gray-900">COVID-19 Dashboard</h4>
-                  <p class="text-sm text-gray-600 mb-4">Tableau</p>
-                  <a href="covid-19.html"
-                    class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View
-                    Project</a>
-                </div>
-              </div>
-              <div class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card">
-                <img src="assets/images/tomato.svg" alt="Zomato Webscrape thumbnail"
-                  class="w-full h-48 object-contain object-center p-8">
-                <div class="p-8 text-center">
-                  <h4 class="text-xl font-bold mb-2 text-gray-900">Zomato Webscrape</h4>
-                  <p class="text-sm text-gray-600 mb-4">Selenium, Python</p>
-                  <a href="zomato.html"
-                    class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View
-                    Project</a>
-                </div>
-              </div>
-            </div>
-          </div>
+        <div class="text-lg md:text-xl leading-relaxed animate-fade-in space-y-5" style="line-height: 1.7;">
+          <p>
+            I'm Saif Rahman — an AI Product professional with 4+ years of experience across healthcare, retail, and
+            aviation. I have a background in psychology, technical depth in data science and machine learning, and
+            hands-on experience leading AI initiatives from concept to deployment.
+          </p>
+          <p>
+            I sit at the intersection of AI, human behavior, and business strategy. My focus is building AI products
+            that solve real organizational problems — while earning trust through responsible design, explainability,
+            and
+            stakeholder alignment.
+          </p>
+          <p>
+            Currently completing a Master of Management in AI at Queen's University (Smith School of Business) and
+            working as a Data Scientist at GTAA (Toronto Pearson), where I lead applied AI projects and AI governance
+            initiatives.
+          </p>
         </div>
 
-        <!-- Using Slick's built-in arrows only -->
+        <!-- Pillar Highlights -->
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mt-12">
+          <div class="pillar-card animate-fade-in">
+            <div class="text-3xl mb-3">🧠</div>
+            <p class="text-sm font-semibold text-gray-800">Psychology-informed product thinking</p>
+          </div>
+          <div class="pillar-card animate-fade-in">
+            <div class="text-3xl mb-3">⚙️</div>
+            <p class="text-sm font-semibold text-gray-800">Technical depth without a purely technical identity</p>
+          </div>
+          <div class="pillar-card animate-fade-in">
+            <div class="text-3xl mb-3">🛡️</div>
+            <p class="text-sm font-semibold text-gray-800">Responsible AI & governance as a core practice</p>
+          </div>
+        </div>
       </div>
     </section>
 
+    <!-- PROJECTS -->
+    <section id="projects" class="py-20 md:py-32 bg-white">
+      <div class="container mx-auto px-6 text-center max-w-6xl">
+        <h2 class="text-4xl md:text-6xl font-bold mb-4 animate-fade-in text-gray-600">Projects</h2>
+        <h3 class="text-2xl md:text-3xl font-bold mb-12 text-gray-900">Featured Projects</h3>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <!-- 1. Career Sensei -->
+          <a href="https://career-sensei.streamlit.app/" target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div
+              class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card h-full flex flex-col">
+              <img src="assets/images/sensei.svg" alt="Career Sensei thumbnail"
+                class="w-full h-48 object-contain object-center p-8">
+              <div class="p-8 text-center flex-grow flex flex-col justify-between">
+                <div>
+                  <h4 class="text-xl font-bold mb-2 text-gray-900">Career Sensei</h4>
+                  <p class="text-sm text-gray-600 mb-4">AI-powered resume analysis tool using RAG, LangChain, and
+                    Gemini — deployed and live.</p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View
+                    Project</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- 2. Clinician Cockpit (In Progress) -->
+          <div class="block h-full">
+            <div
+              class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card h-full flex flex-col">
+              <img src="assets/images/clinician.svg" alt="Clinician Cockpit thumbnail"
+                class="w-full h-48 object-contain object-center p-8">
+              <div class="p-8 text-center flex-grow flex flex-col justify-between">
+                <div>
+                  <h4 class="text-xl font-bold mb-2 text-gray-900">Clinician Cockpit</h4>
+                  <p class="text-sm text-gray-600 mb-2">Responsible AI deployment framework & XAI prototype for
+                    physician trust in clinical ML tools.</p>
+                  <div class="flex justify-center gap-2 mb-4">
+                    <span class="badge-in-progress">In Progress</span>
+                    <span
+                      class="inline-block px-2 py-0.5 bg-gray-200 text-gray-600 rounded-full text-xs font-medium">Alberta
+                      Health Services</span>
+                  </div>
+                </div>
+                <div>
+                  <span
+                    class="inline-block px-6 py-2 border border-gray-300 rounded-full text-gray-400 cursor-default">Coming
+                    Soon</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- 3. AI Ethics Framework -->
+          <a href="https://queensuca-my.sharepoint.com/:w:/g/personal/25ph13_queensu_ca/EVO_HPUqLIRIkyC3quXw9WsBC8HR8n5bKirTOKNjtwJp3w?e=4ZgYda"
+            target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div
+              class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card h-full flex flex-col">
+              <img src="assets/images/framework.png" alt="AI Ethics Framework cover"
+                class="w-full h-48 object-contain object-center p-8">
+              <div class="p-8 text-center flex-grow flex flex-col justify-between">
+                <div>
+                  <h4 class="text-xl font-bold mb-2 text-gray-900">AI Ethics Framework</h4>
+                  <p class="text-sm text-gray-600 mb-4">AI Ethics Framework for responsible model deployment —
+                    presented to senior aviation leadership at GTAA.</p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View
+                    Project</span>
+                </div>
+              </div>
+            </div>
+          </a>
+
+          <!-- 4. Length of Stay Prediction -->
+          <a href="https://docs.google.com/presentation/d/e/2PACX-1vRwUuISXxw1tp_PG0wsqnnKcTGagn1m4gOSdHMLEF_Kt9zBVyhPPHgXXyE2sCeLFdrEBe6ig4F9fxkL/pub?start=false&loop=false&delayms=3000"
+            target="_blank" rel="noopener noreferrer" class="block h-full">
+            <div
+              class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card h-full flex flex-col">
+              <img src="assets/images/bed.svg" alt="Length of Stay Prediction thumbnail"
+                class="w-full h-48 object-contain object-center p-8">
+              <div class="p-8 text-center flex-grow flex flex-col justify-between">
+                <div>
+                  <h4 class="text-xl font-bold mb-2 text-gray-900">Length of Stay Prediction</h4>
+                  <p class="text-sm text-gray-600 mb-4">Clinical length-of-stay prediction model using supervised ML —
+                    healthcare domain.</p>
+                </div>
+                <div>
+                  <span
+                    class="inline-block px-6 py-2 border border-gray-400 rounded-full text-gray-600 hover:text-gray-900 hover:border-gray-900 transition-colors duration-300">View
+                    Project</span>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION -->
     <section id="education" class="py-20 md:py-32 bg-gray-100">
       <div class="container mx-auto px-6 text-center">
         <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in text-gray-600">Education</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-12 max-w-5xl mx-auto">
           <div class="bg-white rounded-2xl p-8 shadow-lg text-center apple-card animate-fade-in">
-            <img src="assets/images/digitalization.png" alt="Smith School of Business" class="w-20 h-20 mx-auto mb-6">
-            <h3 class="text-2xl font-bold mb-2 text-gray-900">Smith School of Business</h3>
-            <p class="text-lg text-gray-600">Masters of Management in Artificial Intelligence</p>
+            <img src="assets/images/digitalization.png" alt="Queen's University" class="w-20 h-20 mx-auto mb-6">
+            <h3 class="text-2xl font-bold mb-2 text-gray-900">Queen's University — Smith School of Business</h3>
+            <p class="text-lg text-gray-600">Master of Management in Artificial Intelligence (MMAI)</p>
+            <p class="text-sm text-gray-500 mt-2">Expected: 2026 · Focus: AI Strategy, Ethical AI, Operations
+              Management</p>
           </div>
           <div class="bg-white rounded-2xl p-8 shadow-lg text-center apple-card animate-fade-in">
             <img src="assets/images/graduation.svg" alt="Graduation Cap" class="w-20 h-20 mx-auto mb-6">
             <h3 class="text-2xl font-bold mb-2 text-gray-900">University of Toronto</h3>
             <p class="text-lg text-gray-600">Honours Bachelor of Science</p>
-            <p class="text-sm text-gray-500 mt-2">Major: Psychology<br> Minors: Computer Science & Mathematics</p>
+            <p class="text-sm text-gray-500 mt-2">Major: Psychology<br>Minors: Computer Science & Mathematics</p>
+            <p class="text-xs text-gray-400 mt-3 italic">This combination — behavioral science + quantitative methods —
+              directly informs how I approach AI product design and human-AI trust.</p>
           </div>
           <div class="bg-white rounded-2xl p-8 shadow-lg text-center apple-card animate-fade-in">
             <img src="assets/images/school.svg" alt="School" class="w-20 h-20 mx-auto mb-6">
-            <h3 class="text-2xl font-bold mb-2 text-gray-900">Toronto Institute of Data Science</h3>
-            <p class="text-lg text-gray-600">Data Science Diploma</p>
-            <p class="text-sm text-gray-500 mt-2">Applied Data Science and Big Data</p>
+            <h3 class="text-2xl font-bold mb-2 text-gray-900">WeCloudData</h3>
+            <p class="text-lg text-gray-600">Data Science Diploma — Applied Data Science and Big Data (2021)</p>
           </div>
         </div>
       </div>
     </section>
 
+    <!-- SKILLS & EXPERTISE -->
     <section id="skills" class="py-20 md:py-32 bg-white">
       <div class="container mx-auto px-6 text-center">
-        <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in text-gray-600">Technical Skills</h2>
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
-          <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
-            <img src="assets/images/coding.svg" alt="Programming" class="w-16 h-16 mb-4">
-            <h3 class="text-xl font-bold mb-4 text-gray-900">Programming</h3>
-            <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
-              <span>Python</span><span>•</span><span>SQL</span><span>•</span><span>LangChain</span><span>•</span><span>Streamlit</span>
+        <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in text-gray-600">Skills & Expertise</h2>
+        <div class="max-w-6xl mx-auto">
+          <!-- Primary: AI Product & Strategy — full width -->
+          <div
+            class="bg-gray-900 text-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in mb-8">
+            <img src="assets/images/server.svg" alt="AI Product & Strategy" class="w-16 h-16 mb-4 invert">
+            <h3 class="text-xl font-bold mb-4">AI Product & Strategy</h3>
+            <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-300">
+              <span>AI Governance</span><span>•</span><span>Responsible AI</span><span>•</span><span>Stakeholder
+                Alignment</span><span>•</span><span>Product
+                Requirements</span><span>•</span><span>XAI</span><span>•</span><span>Ethical
+                AI Frameworks</span><span>•</span><span>AI Roadmapping</span>
             </div>
           </div>
-          <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
-            <img src="assets/images/ml.svg" alt="Machine Learning" class="w-16 h-16 mb-4">
-            <h3 class="text-xl font-bold mb-4 text-gray-900">Machine Learning</h3>
-            <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
-              <span>NumPy</span><span>•</span><span>Pandas</span><span>•</span><span>Sklearn</span><span>•</span><span>RAG</span><span>•</span><span>LLMs</span><span>•</span><span>Vector
-                DBs</span>
+          <!-- Secondary: 3-column grid -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+              <img src="assets/images/coding.svg" alt="Technical Stack" class="w-16 h-16 mb-4">
+              <h3 class="text-xl font-bold mb-4 text-gray-900">Technical Stack</h3>
+              <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
+                <span>Python</span><span>•</span><span>SQL</span><span>•</span><span>LangChain</span><span>•</span><span>Streamlit</span><span>•</span><span>RAG</span><span>•</span><span>Vector
+                  DBs (ChromaDB)</span><span>•</span><span>LLMs</span>
+              </div>
             </div>
-          </div>
-          <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
-            <img src="assets/images/cloud.svg" alt="Cloud" class="w-16 h-16 mb-4">
-            <h3 class="text-xl font-bold mb-4 text-gray-900">Cloud</h3>
-            <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
-              <span>Azure</span><span>•</span><span>Google Cloud</span><span>•</span><span>Streamlit Cloud</span>
+            <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+              <img src="assets/images/ml.svg" alt="Data & Analytics" class="w-16 h-16 mb-4">
+              <h3 class="text-xl font-bold mb-4 text-gray-900">Data & Analytics</h3>
+              <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
+                <span>NumPy</span><span>•</span><span>Pandas</span><span>•</span><span>Scikit-learn</span><span>•</span><span>Tableau</span><span>•</span><span>Power
+                  BI</span><span>•</span><span>Microsoft Fabric</span><span>•</span><span>Azure</span>
+              </div>
             </div>
-          </div>
-          <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
-            <img src="assets/images/server.svg" alt="AI/LLM Stack" class="w-16 h-16 mb-4">
-            <h3 class="text-xl font-bold mb-4 text-gray-900">AI/LLM Stack</h3>
-            <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
-              <span>Gemini API</span><span>•</span><span>OpenAI
-                API</span><span>•</span><span>ChromaDB</span><span>•</span><span>Prompt Engineering</span>
+            <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+              <img src="assets/images/cloud.svg" alt="Cloud & Platforms" class="w-16 h-16 mb-4">
+              <h3 class="text-xl font-bold mb-4 text-gray-900">Cloud & Platforms</h3>
+              <div class="flex flex-wrap justify-center gap-2 text-sm text-gray-600">
+                <span>Azure</span><span>•</span><span>Google
+                  Cloud</span><span>•</span><span>Streamlit Cloud</span><span>•</span><span>Gemini
+                  API</span><span>•</span><span>OpenAI API</span>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <section id="contact" class="py-20 md:py-32 bg-gray-100">
+    <!-- THOUGHT LEADERSHIP -->
+    <section id="thought-leadership" class="py-20 md:py-32 bg-gray-100">
       <div class="container mx-auto px-6 text-center max-w-4xl">
-        <h2 class="text-4xl md:text-6xl font-bold mb-12 animate-fade-in text-gray-600">Contact</h2>
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-gray-600">Thought Leadership</h2>
+        <p class="text-lg text-gray-500 mb-12">I write about AI at the intersection of psychology, product strategy, and
+          responsible deployment.</p>
+        <div class="coming-soon-card animate-fade-in">
+          <p class="text-gray-500">Articles coming soon. Follow along on <a href="https://saifmorahman.medium.com/"
+              target="_blank" rel="noopener noreferrer" class="text-gray-800 font-semibold hover:underline">Medium</a>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="py-20 md:py-32 bg-white">
+      <div class="container mx-auto px-6 text-center max-w-4xl">
+        <h2 class="text-4xl md:text-6xl font-bold mb-6 animate-fade-in text-gray-600">Contact</h2>
+        <p class="text-lg text-gray-500 mb-12">I'm always open to conversations about AI product strategy, responsible
+          AI, or interesting problems worth solving.</p>
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-3xl mx-auto">
-          <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+          <!-- Email — primary -->
+          <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
             <img src="assets/images/email.svg" alt="Email" class="w-16 h-16 mb-4">
             <h3 class="text-lg font-bold text-gray-900">Email</h3>
-            <p class="text-sm text-gray-600 mt-2">saifmorahman@gmail.com</p>
+            <a href="mailto:saifmorahman@gmail.com" class="contact-link mt-3 text-sm">saifmorahman@gmail.com</a>
           </div>
-          <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
-            <a href="https://www.linkedin.com/in/saifrahman10/" target="_blank" rel="noopener noreferrer">
-              <img src="assets/images/linkedin.svg" alt="LinkedIn" class="w-16 h-16 mb-4">
-            </a>
-            <h3 class="text-lg font-bold text-gray-900">LinkedIn</h3>
-            <a href="https://www.linkedin.com/in/saifrahman10/" target="_blank" rel="noopener noreferrer"
-              class="text-sm text-gray-600 mt-2 hover:underline">saifrahman10</a>
-          </div>
-          <div class="bg-white rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+          <!-- GitHub — secondary, but prioritized over LinkedIn -->
+          <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
             <a href="https://github.com/saifrahman10" target="_blank" rel="noopener noreferrer">
               <img src="assets/images/github.svg" alt="GitHub" class="w-16 h-16 mb-4">
             </a>
-            <h3 class="text-lg font-bold text-gray-900">Github</h3>
+            <h3 class="text-lg font-bold text-gray-900">GitHub</h3>
             <a href="https://github.com/saifrahman10" target="_blank" rel="noopener noreferrer"
               class="text-sm text-gray-600 mt-2 hover:underline">saifrahman10</a>
+          </div>
+          <!-- LinkedIn — deprioritized (last position) -->
+          <div class="bg-gray-100 rounded-2xl p-8 shadow-lg flex flex-col items-center apple-card animate-fade-in">
+            <a href="https://www.linkedin.com/in/saifrahman10/" target="_blank" rel="noopener noreferrer">
+              <img src="assets/images/linkedin.svg" alt="LinkedIn" class="w-16 h-16 mb-4 opacity-60">
+            </a>
+            <h3 class="text-lg font-bold text-gray-900 opacity-60">LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/saifrahman10/" target="_blank" rel="noopener noreferrer"
+              class="text-sm text-gray-400 mt-2 hover:underline">saifrahman10</a>
           </div>
         </div>
       </div>
@@ -342,26 +523,19 @@
   </main>
 
   <footer class="py-8 bg-gray-100 text-center text-gray-500 text-xs">
-    <p>&copy; 2025 S. Rahman. All rights reserved.</p>
+    <p>&copy; 2026 Saif Rahman</p>
+    <p class="mt-1 text-gray-400">AI Product & Strategy · Toronto, ON</p>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.js"></script>
   <script>
-    $(document).ready(function () {
-      // Slick only on the Projects carousel
-      $('.project-slider').slick({
-        dots: false,
-        infinite: true,
-        speed: 800,
-        slidesToShow: 1,
-        adaptiveHeight: true,
-        autoplay: false,
-        fade: true,
-        cssEase: 'linear',
-        arrows: true // use built-in arrows
-      });
-    });
+    // Mobile menu toggle
+    function toggleMobileMenu() {
+      document.getElementById('mobileNav').classList.toggle('active');
+    }
+
+    function closeMobileMenu() {
+      document.getElementById('mobileNav').classList.remove('active');
+    }
   </script>
 </body>
 
