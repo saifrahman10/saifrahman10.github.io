@@ -29,21 +29,23 @@
   <style>
     body {
       font-family: 'Inter', sans-serif;
+      background-color: #f9fafb;
+      color: #1f2933;
     }
 
     .apple-card {
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      box-shadow: 0 6px 18px rgba(15, 23, 42, 0.06);
     }
 
     .apple-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.05);
+      transform: translateY(-3px);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.10);
     }
 
     .animate-fade-in {
       opacity: 0;
-      animation: fadeIn 1s forwards;
+      animation: fadeIn 0.9s ease-out forwards;
     }
 
     @keyframes fadeIn {
@@ -54,8 +56,8 @@
 
     .animate-fade-in-up {
       opacity: 0;
-      transform: translateY(20px);
-      animation: fadeInUp 1s forwards;
+      transform: translateY(14px);
+      animation: fadeInUp 0.9s ease-out forwards;
     }
 
     @keyframes fadeInUp {
@@ -196,7 +198,7 @@
   </style>
 </head>
 
-<body class="bg-white text-gray-900">
+<body class="bg-gray-50 text-gray-800">
 
   <header class="fixed top-0 w-full z-20 bg-white shadow-md">
     <nav class="container mx-auto px-6 py-4 flex justify-between items-center text-sm font-semibold text-gray-600">
@@ -232,12 +234,12 @@
 
   <main>
     <!-- HERO -->
-    <section id="home" class="min-h-screen flex items-center justify-center text-center p-8 bg-white">
+    <section id="home" class="min-h-screen flex items-center justify-center text-center p-8 bg-gray-50">
       <div
         class="container mx-auto flex flex-col md:flex-row items-center justify-center md:space-x-12 animate-fade-in-up">
         <div class="mb-8 md:mb-0 text-left">
           <h1
-            style="font-family: 'Bebas Neue', sans-serif; font-size: 4.5rem; font-weight: 900; line-height: 1; color: #2d3748;">
+            style="font-family: 'Bebas Neue', sans-serif; font-size: 4rem; font-weight: 900; line-height: 1.05; color: #2d3748;">
             Building AI Products<br>That Earn Trust
           </h1>
           <p class="text-lg md:text-xl text-gray-500 mt-6 max-w-lg" style="line-height: 1.7;">
@@ -321,17 +323,16 @@
             </div>
           </a>
 
-          <!-- 2. Clinician Cockpit (In Progress) -->
+          <!-- 2. Responsible AI Deployment Console (In Progress) -->
           <div class="block h-full">
             <div
               class="bg-gray-100 rounded-2xl overflow-hidden shadow-lg animate-fade-in apple-card h-full flex flex-col">
-              <img src="assets/images/clinician.svg" alt="Clinician Cockpit thumbnail"
+              <img src="assets/images/clinician.svg" alt="Responsible AI Deployment Console thumbnail"
                 class="w-full h-48 object-contain object-center p-8">
               <div class="p-8 text-center flex-grow flex flex-col justify-between">
                 <div>
-                  <h4 class="text-xl font-bold mb-2 text-gray-900">Clinician Cockpit</h4>
-                  <p class="text-sm text-gray-600 mb-2">Responsible AI deployment framework & XAI prototype for
-                    physician trust in clinical ML tools.</p>
+                  <h4 class="text-xl font-bold mb-2 text-gray-900">Responsible AI Deployment Console</h4>
+                  <p class="text-sm text-gray-600 mb-2">AI governance console for data scientists at Alberta Health Services to monitor model drift, ethics benchmarks, and deploy clinical AI responsibly.</p>
                   <div class="flex justify-center gap-2 mb-4">
                     <span class="badge-in-progress">In Progress</span>
                     <span
