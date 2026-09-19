@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calm Nature Portfolio</title>
+    
+    <!-- Importing soft, elegant fonts from Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Loading Lucide Icons for clean, minimalist SVG icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Earthy, calming color palette
+                        oat: '#F4F3ED',        // Soft background
+                        stone: '#E5E4DB',      // Slightly darker structural background
+                        sage: '#9EB0A2',       // Calming green accent
+                        forest: '#2A3C24',     // Deep green for primary text
+                        clay: '#C99E87',       // Warm terracotta accent
+                        sand: '#D5CDA9'        // Soft yellow-ish accent
+                    },
+                    fontFamily: {
+                        sans: ['Outfit', 'sans-serif'],
+                        serif: ['DM Serif Display', 'serif'],
+                    },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(42, 60, 36, 0.08)',
+                        'hover-soft': '0 20px 40px -10px rgba(42, 60, 36, 0.12)',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Base styling for smooth background and selection */
+        body {
+            background-color: #F4F3ED; /* oat */
+            color: #2A3C24; /* forest */
+        }
+        
+        ::selection {
+            background-color: #9EB0A2; /* sage */
+            color: #F4F3ED;
+        }
+
+        /* Gentle fade-in and float-up animation for an organic feel */
+        @keyframes gentleFadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(24px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-organic {
+            animation: gentleFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+            opacity: 0; /* Starts hidden, animation handles visibility */
+        }
+
+        /* Staggered animation delays to make the grid load sequentially */
+        .delay-100 { animation-delay: 100ms; }
+        .delay-200 { animation-delay: 200ms; }
+        .delay-300 { animation-delay: 300ms; }
+        .delay-400 { animation-delay: 400ms; }
+        .delay-500 { animation-delay: 500ms; }
+        .delay-600 { animation-delay: 600ms; }
+
+        /* Smooth transitions for interactive elements */
+        .bento-card {
+            transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), 
+                        box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+        .bento-card:hover {
+            transform: translateY(-4px);
+        }
+        
+        /* Utility class to hide scrollbar but keep functionality */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="min-h-screen font-sans antialiased p-4 md:p-8 lg:p-12 overflow-x-hidden">
+
+    <div class="max-w-7xl mx-auto">
+        
+        <!-- Minimalist Header -->
+        <header class="flex justify-between items-center mb-10 md:mb-16 animate-organic px-4">
+            <div class="text-xl font-serif text-forest tracking-wide">
+                Jane Doe<span class="text-sage">.</span>
+            </div>
+            <nav class="flex gap-6 text-sm font-medium text-forest/70">
+                <a href="#" class="hover:text-forest transition-colors duration-300">Work</a>
+                <a href="#" class="hover:text-forest transition-colors duration-300">About</a>
+                <a href="#" class="hover:text-forest transition-colors duration-300">Contact</a>
+            </nav>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-4 md:grid-rows-3 gap-4 md:gap-6 auto-rows-fr">
+            
+            <!-- Bento Item 1: Main Hero/Intro (Spans 2 cols, 2 rows) -->
+            <div class="bento-card animate-organic delay-100 col-span-1 md:col-span-2 md:row-span-2 bg-stone/50 rounded-[2.5rem] p-8 md:p-12 flex flex-col justify-between soft-shadow relative overflow-hidden group">
+                <div class="absolute -right-20 -top-20 w-64 h-64 bg-sage/20 rounded-full blur-3xl group-hover:bg-sage/30 transition-colors duration-700"></div>
+                <div>
+                    <div class="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-md rounded-full text-sm font-medium text-forest mb-8">
+                        <span class="w-2 h-2 rounded-full bg-sage animate-pulse"></span>
+                        Available for freelance
+                    </div>
+                    <h1 class="font-serif text-4xl md:text-5xl lg:text-6xl text-forest leading-[1.1] mb-6">
+                        Designing digital spaces that feel <span class="italic text-sage">natural</span>.
+                    </h1>
+                </div>
+                <div>
+                    <p class="text-forest/80 text-lg max-w-md font-light leading-relaxed">
+                        I am a multidisciplinary designer blending clean, modular architecture with organic, human-centric aesthetics.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Bento Item 2: Current Status/Location -->
+            <div class="bento-card animate-organic delay-200 col-span-1 bg-sand/30 rounded-[2.5rem] p-8 flex flex-col justify-center items-center text-center soft-shadow">
+                <i data-lucide="map-pin" class="w-8 h-8 text-clay mb-4"></i>
+                <h3 class="font-serif text-2xl text-forest mb-2">Based in</h3>
+                <p class="text-forest/70 font-light">Vancouver, British Columbia</p>
+                <div class="mt-6 pt-6 border-t border-forest/10 w-full">
+                    <p class="text-sm font-medium text-forest/60 uppercase tracking-widest">Local Time</p>
+                    <p class="text-xl font-light text-forest mt-1">10:24 AM</p>
+                </div>
+            </div>
+
+            <!-- Bento Item 3: Nature Visual/Photography -->
+            <div class="bento-card animate-organic delay-300 col-span-1 md:row-span-2 rounded-[2.5rem] overflow-hidden soft-shadow relative group">
+                <!-- Fallback background if image doesn't load -->
+                <div class="absolute inset-0 bg-sage/40"></div>
+                <img src="https://images.unsplash.com/photo-1518531933037-91b2f5f229cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                     alt="Monstera plant leaves creating a calming nature aesthetic" 
+                     class="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105">
+            </div>
+
+            <!-- Bento Item 4: Featured Project -->
+            <div class="bento-card animate-organic delay-400 col-span-1 bg-white/70 rounded-[2.5rem] p-8 flex flex-col justify-between soft-shadow group cursor-pointer">
+                <div class="flex justify-between items-start mb-8">
+                    <div class="w-12 h-12 rounded-2xl bg-stone flex items-center justify-center text-forest group-hover:bg-sage group-hover:text-white transition-colors duration-500">
+                        <i data-lucide="leaf"></i>
+                    </div>
+                    <i data-lucide="arrow-up-right" class="text-forest/30 group-hover:text-forest transition-colors duration-300"></i>
+                </div>
+                <div>
+                    <p class="text-sm text-forest/50 font-medium mb-1">Case Study</p>
+                    <h3 class="font-serif text-2xl text-forest">Botanical App</h3>
+                </div>
+            </div>
+
+            <!-- Bento Item 5: Tools & Skills (Spans 2 cols) -->
+            <div class="bento-card animate-organic delay-500 col-span-1 md:col-span-2 bg-sage/15 rounded-[2.5rem] p-8 md:p-10 flex flex-col justify-center soft-shadow">
+                <h3 class="font-serif text-2xl text-forest mb-6">The tools I tend to</h3>
+                <div class="flex flex-wrap gap-3">
+                    <span class="px-4 py-2 bg-white/50 rounded-full text-forest/80 text-sm font-medium">Figma</span>
+                    <span class="px-4 py-2 bg-white/50 rounded-full text-forest/80 text-sm font-medium">React & Next.js</span>
+                    <span class="px-4 py-2 bg-white/50 rounded-full text-forest/80 text-sm font-medium">Tailwind CSS</span>
+                    <span class="px-4 py-2 bg-white/50 rounded-full text-forest/80 text-sm font-medium">Webflow</span>
+                    <span class="px-4 py-2 bg-white/50 rounded-full text-forest/80 text-sm font-medium">Framer Motion</span>
+                </div>
+            </div>
+
+            <!-- Bento Item 6: Contact/Action -->
+            <div class="bento-card animate-organic delay-600 col-span-1 bg-clay rounded-[2.5rem] p-8 flex flex-col justify-between soft-shadow group cursor-pointer hover:bg-[#b88c75] transition-colors duration-300">
+                <div class="w-full flex justify-end">
+                    <div class="w-10 h-10 rounded-full bg-white/20 flex items-center justify-center group-hover:-rotate-45 transition-transform duration-500">
+                        <i data-lucide="arrow-right" class="text-white"></i>
+                    </div>
+                </div>
+                <div class="mt-12">
+                    <h3 class="font-serif text-3xl text-white mb-2">Let's grow together.</h3>
+                    <p class="text-white/80 font-light text-sm">Send me an email</p>
+                </div>
+            </div>
+
+        </main>
+        
+        <footer class="mt-16 md:mt-24 pb-8 flex flex-col md:flex-row justify-between items-center text-forest/50 text-sm animate-organic delay-600 px-4">
+            <p>© 2026 Jane Doe. All rights reserved.</p>
+            <div class="flex gap-4 mt-4 md:mt-0">
+                <a href="#" class="hover:text-forest transition-colors">Twitter</a>
+                <a href="#" class="hover:text-forest transition-colors">LinkedIn</a>
+                <a href="#" class="hover:text-forest transition-colors">GitHub</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Initialize icons -->
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>

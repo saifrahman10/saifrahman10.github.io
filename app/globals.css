@@ -1,0 +1,85 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ------------------------------------------------------------------
+   Base styling (from nature_portfolio_template.txt)
+   ------------------------------------------------------------------ */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: theme('colors.oat'); /* oat */
+  color: theme('colors.forest'); /* forest */
+}
+
+::selection {
+  background-color: theme('colors.sage'); /* sage */
+  color: theme('colors.oat');
+}
+
+/* ------------------------------------------------------------------
+   Custom animations (from nature_portfolio_template.txt)
+   Kept in @layer components so Tailwind utilities can still override.
+   ------------------------------------------------------------------ */
+@layer components {
+  /* Gentle fade-in and float-up animation for an organic feel */
+  @keyframes gentleFadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(24px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-organic {
+    animation: gentleFadeIn 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+    opacity: 0; /* Starts hidden, animation handles visibility */
+  }
+
+  /* Staggered animation delays so the grid loads sequentially.
+     Named organic-delay-* (not delay-*) so they don't collide with
+     Tailwind's transition-delay utilities, which would otherwise add a
+     delay to the hover transitions as well. */
+  .organic-delay-100 { animation-delay: 100ms; }
+  .organic-delay-200 { animation-delay: 200ms; }
+  .organic-delay-300 { animation-delay: 300ms; }
+  .organic-delay-400 { animation-delay: 400ms; }
+  .organic-delay-500 { animation-delay: 500ms; }
+  .organic-delay-600 { animation-delay: 600ms; }
+
+  /* Smooth transitions for interactive elements */
+  .bento-card {
+    transition:
+      transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 0.3s ease;
+  }
+  .bento-card:hover {
+    transform: translateY(-4px);
+  }
+
+  /* Utility class to hide scrollbar but keep functionality */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .animate-organic {
+    animation: none;
+    opacity: 1;
+  }
+  .bento-card:hover {
+    transform: none;
+  }
+}
